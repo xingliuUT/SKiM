@@ -1,0 +1,7 @@
+*.o
+*.mod
+*.x
+*.log
+*.error
+*.dat*
+.*in
