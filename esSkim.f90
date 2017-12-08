@@ -19,7 +19,7 @@ program esSkim
         real (kind = 8), dimension(:), allocatable :: kz_grid, ky_grid, kperp_grid
         ! suffix 1: starting point of a scan
         real (kind = 8) :: kz1, ky1, kperp1
-        ! index of starting point of a scan within a grid
+        ! suffix _ref: index of starting point of a scan within a grid
         integer(kind = 8), dimension(:), allocatable :: ikperp_ref, ikz_ref, iky_ref
 
         ! TODO: add knobs for t'i = t'e, or f'z != f'i
@@ -29,17 +29,18 @@ program esSkim
         real (kind = 8) :: tprime0_i, fprime0, tprime0_e, omd0
         real (kind = 8), dimension(:), allocatable :: fprime_grid, tprime_i_grid, &
                                                     & tprime_e_grid, omd_grid
-
+        ! current value for each quantity to use in calculation
         real (kind = 8) :: fprime, tprime_i, tprime_e, tprime, omd, kz, ky, kperp
 
         ! vi is vertical shift in complex plane of vz
+        ! vi is useful for finding roots with small or negative growth rate
         ! TODO: turn fr from an input parameter into a constant of the code
         real (kind = 8) :: vi, fr
-        ! knob for each species to be adiabatic or non-adiabatic
+        ! knob for each species to be adiabatic (0) or non-adiabatic (1)
         real (kind = 8) :: na_e, na_z, na_i
         ! lambda_debye2 non-trivial in ETG
         real (kind = 8) :: lambda_debye2
-        ! Ti = Ti / Te, mu_e = me / mi (often D), mu_z = mz / mi
+        ! Ti = Ti / Te, mu_e = me / mi (often m_D), mu_z = mz / mi
         real (kind = 8) :: Ti, Zeff, Z, mu_e, mu_z
         ! initial guess of mode frequency and growth rate
         real (kind = 8) :: omRe, omIm
@@ -68,7 +69,7 @@ program esSkim
 
 
         ! moment for distribution function integral
-        ! = 0 : density, = 1: velocity
+        ! 0 : density; 1: velocity
         integer (kind = 8) :: moment = 0
         ! v_parallel
         complex (kind = 8) :: vPar
