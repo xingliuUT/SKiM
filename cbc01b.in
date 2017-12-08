@@ -1,0 +1,67 @@
+&parameters
+
+        nstepSec = 30
+        nstepInt = 10000
+
+	nkz = 1
+	dkz = 0.
+	kz0 = 0.2274
+	kz1 = 0.2274
+
+	nky = 50
+	dky = 0.01
+	ky0 = 0.05
+	ky1 = 0.2
+
+	nkperp = 1
+	dkperp = 0.
+	kperp0 = 1.6011
+	kperp1 = 1.6011
+
+	nfprime = 1
+	dfprime = 0.
+	fprime0 = 2.22
+
+	ntprime_i = 1
+	dtprime_i = 0.
+	tprime0_i = 6.96
+
+	ntprime_e = 1
+	dtprime_e = 0.
+	tprime0_e = 6.96
+
+	nomd = 1
+	domd = 0.
+	omd0 = 0.8632
+
+	vyFrom = 1E-12
+        vyTo = 10.0
+        vzFrom = -10.0
+	vzTo = 10.0
+
+        omRe = 0.38
+        omIm = 0.2
+
+	nu0 = 0.
+        coll_c = 1.
+	eps = 0.18
+	omde = 1.
+        vi  = 0.1
+	secTol = 1.0E-03
+	intTol = 1.0E-04
+	fr = 0.5
+	fr_te = 0.792
+
+	Ti = 1.
+	Zeff = 1.
+	Z = 10.
+	mu_e = 2.72D-04
+	mu_z = 34
+	na_e = 0.
+	na_z = 0.
+	na_i = 1.
+	t_e = 0.
+	
+	seedDevFrac = 0.05
+	lambda_debye2 = 0.
+/
